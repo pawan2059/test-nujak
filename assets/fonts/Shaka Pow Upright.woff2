@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WOJAK - On Abstract</title>
+  <meta name="description"
+    content="WOJAK is the first CTO token on the Abstract network. Join our community and be part of the revolution." />
+  <link rel="icon" href="/assets/wojaklogo-DZ-dIrRl.jpg" />
+  <link rel="preload" href="/assets/fonts/Shaka Pow Upright.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="module" crossorigin src="/assets/index-DI8dKlH7.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-ZsRiW8yu.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>

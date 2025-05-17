@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memecoin Shooter Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        
+        #game-container {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            overflow: hidden;
+        }
+        
+        #game-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        #score-display {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #ffffff;
+            font-size: 24px;
+            z-index: 10;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+        
+        #time-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #ffffff;
+            font-size: 24px;
+            z-index: 10;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+        
+        #game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            display: none;
+        }
+        
+        #game-over h2 {
+            color: #ff5555;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        #final-score {
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        #restart-button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #restart-button:hover {
+            background-color: #0088cc;
+        }
+        
+        #start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+        
+        #start-screen h2 {
+            color: #00ffaa;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        #start-screen p {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 0 40px;
+        }
+        
+        #start-button {
+            padding: 10px 20px;
+            background-color: #00aaff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #start-button:hover {
+            background-color: #0088cc;
+        }
+        
+        .shooter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            z-index: 5;
+        }
+        
+        .bullet {
+            position: absolute;
+            width: 8px;
+            height: 20px;
+            background-color: #ffff00;
+            border-radius: 4px;
+            z-index: 2;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas" width="400" height="600"></canvas>
+        <div id="score-display">Score: 0</div>
+        <div id="time-display">Time: 60s</div>
+        
+        <div id="start-screen">
+            <h2>Memecoin Shooter</h2>
+            <p>Shoot falling coins to earn points! Click or tap to shoot. Score as many points as possible in 60 seconds!</p>
+            <button id="start-button">Start Game</button>
+        </div>
+        
+        <div id="game-over">
+            <h2>Game Over!</h2>
+            <div id="final-score">Your score: 0</div>
+            <button id="restart-button">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('game-canvas');
+            const ctx = canvas.getContext('2d');
+            const gameContainer = document.getElementById('game-container');
+            const scoreDisplay = document.getElementById('score-display');
+            const timeDisplay = document.getElementById('time-display');
+            const gameOverScreen = document.getElementById('game-over');
+            const finalScoreDisplay = document.getElementById('final-score');
+            const restartButton = document.getElementById('restart-button');
+            const startScreen = document.getElementById('start-screen');
+            const startButton = document.getElementById('start-button');
+            
+            // Game variables
+            let score = 0;
+            let timeLeft = 60;
+            let gameActive = false;
+            let coins = [];
+            let bullets = [];
+            let lastTime = 0;
+            let coinInterval = 800; // milliseconds between coin spawns
+            let lastCoinTime = 0;
+            let shooterX = canvas.width / 2;
+            let coinImages = [];
+            let shooterImage = null;
+            let coinTypes = [
+                { name: 'gold', points: 10, speed: 3, size: 40, chance: 50 },
+                { name: 'silver', points: 5, speed: 4, size: 35, chance: 30 },
+                { name: 'bronze', points: 1, speed: 5, size: 30, chance: 20 }
+            ];
+            let explosions = [];
+            
+            // Preload images
+            function preloadImages() {
+                return new Promise((resolve) => {
+                    let loadedImages = 0;
+                    const requiredImages = coinTypes.length + 1; // coinTypes + shooter
+                    
+                    // Load coin images
+                    coinTypes.forEach((type, index) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            loadedImages++;
+                            if (loadedImages === requiredImages) resolve();
+                        };
+                        img.src = createCoinImage(type.name);
+                        coinImages[index] = img;
+                    });
+                    
+                    // Load shooter image
+                    shooterImage = new Image();
+                    shooterImage.onload = () => {
+                        loadedImages++;
+                        if (loadedImages === requiredImages) resolve();
+                    };
+                    shooterImage.src = createShooterImage();
+                });
+            }
+            
+            // Create coin image as data URL
+            function createCoinImage(type) {
+                const tempCanvas = document.createElement('canvas');
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCanvas.width = 50;
+                tempCanvas.height = 50;
+                
+                let coinColor;
+                if (type === 'gold') {
+                    coinColor = '#FFD700';
+                } else if (type === 'silver') {
+                    coinColor = '#C0C0C0';
+                } else {
+                    coinColor = '#CD7F32'; // bronze
+                }
+                
+                // Draw coin circle
+                tempCtx.beginPath();
+                tempCtx.arc(25, 25, 20, 0, Math.PI * 2);
+                tempCtx.fillStyle = coinColor;
+                tempCtx.fill();
+                
+                // Add shine
+                const gradient = tempCtx.createLinearGradient(10, 10, 40, 40);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.8)');
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+                tempCtx.beginPath();
+                tempCtx.arc(25, 25, 15, 0, Math.PI * 0.8);
+                tempCtx.fillStyle = gradient;
+                tempCtx.fill();
+                
+                // Add "$" symbol
+                tempCtx.font = 'bold 20px Arial';
+                tempCtx.fillStyle = '#000';
+                tempCtx.textAlign = 'center';
+                tempCtx.textBaseline = 'middle';
+                tempCtx.fillText('$', 25, 25);
+                
+                return tempCanvas.toDataURL();
+            }
+            
+            // Create shooter image as data URL
+            function createShooterImage() {
+                const tempCanvas = document.createElement('canvas');
+                const tempCtx = tempCanvas.getContext('2d');
+                tempCanvas.width = 60;
+                tempCanvas.height = 60;
+                
+                // Draw base
+                tempCtx.fillStyle = '#555';
+                tempCtx.fillRect(10, 40, 40, 20);
+                
+                // Draw barrel
+                tempCtx.fillStyle = '#333';
+                tempCtx.fillRect(25, 10, 10, 30);
+                
+                // Draw barrel end
+                tempCtx.fillStyle = '#222';
+                tempCtx.fillRect(22, 5, 16, 5);
+                
+                return tempCanvas.toDataURL();
+            }
+            
+            // Initialize game
+            async function init() {
+                await preloadImages();
+                
+                // Mouse/touch move to control shooter
+                gameContainer.addEventListener('mousemove', (e) => {
+                    if (!gameActive) return;
+                    
+                    const rect = canvas.getBoundingClientRect();
+                    const relativeX = e.clientX - rect.left;
+                    
+                    // Keep shooter within game bounds
+                    shooterX = Math.max(30, Math.min(canvas.width - 30, relativeX));
+                });
+                
+                // Touch events for mobile
+                gameContainer.addEventListener('touchmove', (e) => {
+                    if (!gameActive) return;
+                    e.preventDefault();
+                    
+                    const rect = canvas.getBoundingClientRect();
+                    const relativeX = e.touches[0].clientX - rect.left;
+                    
+                    // Keep shooter within game bounds
+                    shooterX = Math.max(30, Math.min(canvas.width - 30, relativeX));
+                });
+                
+                // Click/tap to shoot
+                gameContainer.addEventListener('click', (e) => {
+                    if (!gameActive) return;
+                    shoot();
+                });
+                
+                gameContainer.addEventListener('touchstart', (e) => {
+                    if (!gameActive) return;
+                    e.preventDefault();
+                    shoot();
+                });
+                
+                // Start button
+                startButton.addEventListener('click', startGame);
+                
+                // Restart button
+                restartButton.addEventListener('click', startGame);
+                
+                // Responsive canvas
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+            }
+            
+            function resizeCanvas() {
+                // Maintain aspect ratio
+                const containerWidth = gameContainer.clientWidth;
+                const containerHeight = gameContainer.clientHeight;
+                
+                canvas.width = containerWidth;
+                canvas.height = containerHeight;
+            }
+            
+            function startGame() {
+                // Reset game state
+                score = 0;
+                timeLeft = 60;
+                gameActive = true;
+                coins = [];
+                bullets = [];
+                explosions = [];
+                
+                // Update displays
+                scoreDisplay.textContent = `Score: ${score}`;
+                timeDisplay.textContent = `Time: ${timeLeft}s`;
+                
+                // Hide screens
+                startScreen.style.display = 'none';
+                gameOverScreen.style.display = 'none';
+                
+                // Start game loop
+                lastTime = performance.now();
+                requestAnimationFrame(gameLoop);
+                
+                // Start timer
+                const timer = setInterval(() => {
+                    timeLeft--;
+                    timeDisplay.textContent = `Time: ${timeLeft}s`;
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        endGame();
+                    }
+                }, 1000);
+            }
+            
+            function endGame() {
+                gameActive = false;
+                gameOverScreen.style.display = 'flex';
+                finalScoreDisplay.textContent = `Your score: ${score}`;
+            }
+            
+            function shoot() {
+                const bullet = {
+                    x: shooterX,
+                    y: canvas.height - 70,
+                    width: 8,
+                    height: 20,
+                    speed: 10
+                };
+                
+                bullets.push(bullet);
+            }
+            
+            function spawnCoin() {
+                const rand = Math.random() * 100;
+                let typeIndex = 0;
+                let cumulative = 0;
+                
+                // Determine coin type based on chance
+                for (let i = 0; i < coinTypes.length; i++) {
+                    cumulative += coinTypes[i].chance;
+                    if (rand <= cumulative) {
+                        typeIndex = i;
+                        break;
+                    }
+                }
+                
+                const type = coinTypes[typeIndex];
+                
+                const coin = {
+                    x: Math.random() * (canvas.width - type.size),
+                    y: -type.size,
+                    size: type.size,
+                    speed: type.speed,
+                    points: type.points,
+                    typeIndex: typeIndex
+                };
+                
+                coins.push(coin);
+            }
+            
+            function createExplosion(x, y, points) {
+                const explosion = {
+                    x: x,
+                    y: y,
+                    size: 1,
+                    maxSize: 30,
+                    alpha: 1,
+                    points: points,
+                    textY: y,
+                    textAlpha: 1
+                };
+                
+                explosions.push(explosion);
+            }
+            
+            function updateExplosions() {
+                for (let i = explosions.length - 1; i >= 0; i--) {
+                    const exp = explosions[i];
+                    
+                    // Grow and fade explosion
+                    exp.size += 2;
+                    exp.alpha -= 0.05;
+                    
+                    // Move points text upward
+                    exp.textY -= 1;
+                    exp.textAlpha -= 0.02;
+                    
+                    // Remove when completely faded
+                    if (exp.alpha <= 0) {
+                        explosions.splice(i, 1);
+                    }
+                }
+            }
+            
+            function drawExplosions() {
+                explosions.forEach(exp => {
+                    // Draw explosion circle
+                    ctx.beginPath();
+                    ctx.arc(exp.x, exp.y, exp.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 0, ${exp.alpha})`;
+                    ctx.fill();
+                    
+                    // Draw points text
+                    ctx.font = '20px Arial';
+                    ctx.fillStyle = `rgba(255, 255, 255, ${exp.textAlpha})`;
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`+${exp.points}`, exp.x, exp.textY);
+                });
+            }
+            
+            function updateEntities(deltaTime) {
+                // Spawn new coins
+                lastCoinTime += deltaTime;
+                if (lastCoinTime >= coinInterval) {
+                    spawnCoin();
+                    lastCoinTime = 0;
+                }
+                
+                // Update coins
+                for (let i = coins.length - 1; i >= 0; i--) {
+                    const coin = coins[i];
+                    coin.y += coin.speed;
+                    
+                    // Remove coins that fall off screen
+                    if (coin.y > canvas.height) {
+                        coins.splice(i, 1);
+                    }
+                }
+                
+                // Update bullets
+                for (let i = bullets.length - 1; i >= 0; i--) {
+                    const bullet = bullets[i];
+                    bullet.y -= bullet.speed;
+                    
+                    // Remove bullets that go off screen
+                    if (bullet.y < -bullet.height) {
+                        bullets.splice(i, 1);
+                    }
+                }
+                
+                // Check for collisions
+                for (let i = coins.length - 1; i >= 0; i--) {
+                    const coin = coins[i];
+                    
+                    for (let j = bullets.length - 1; j >= 0; j--) {
+                        const bullet = bullets[j];
+                        
+                        // Simple collision detection
+                        if (bullet.x < coin.x + coin.size &&
+                            bullet.x + bullet.width > coin.x &&
+                            bullet.y < coin.y + coin.size &&
+                            bullet.y + bullet.height > coin.y) {
+                            
+                            // Score points
+                            score += coin.points;
+                            scoreDisplay.textContent = `Score: ${score}`;
+                            scoreDisplay.classList.add('pulse');
+                            setTimeout(() => {
+                                scoreDisplay.classList.remove('pulse');
+                            }, 300);
+                            
+                            // Create explosion
+                            createExplosion(coin.x + coin.size / 2, coin.y + coin.size / 2, coin.points);
+                            
+                            // Remove the coin and bullet
+                            coins.splice(i, 1);
+                            bullets.splice(j, 1);
+                            break;
+                        }
+                    }
+                }
+                
+                // Update explosions
+                updateExplosions();
+            }
+            
+            function render() {
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw background
+                const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+                gradient.addColorStop(0, '#000033');
+                gradient.addColorStop(1, '#000066');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw stars
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                for (let i = 0; i < 50; i++) {
+                    const x = Math.sin(i * 324) * canvas.width;
+                    const y = Math.cos(i * 456) * canvas.height;
+                    const size = Math.abs(Math.sin(i)) * 2;
+                    ctx.beginPath();
+                    ctx.arc((x + canvas.width) % canvas.width, 
+                             (y + canvas.height) % canvas.height, 
+                             size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                
+                // Draw coins
+                coins.forEach(coin => {
+                    ctx.drawImage(coinImages[coin.typeIndex], coin.x, coin.y, coin.size, coin.size);
+                });
+                
+                // Draw bullets
+                ctx.fillStyle = '#ffff00';
+                bullets.forEach(bullet => {
+                    ctx.fillRect(bullet.x - bullet.width / 2, bullet.y, bullet.width, bullet.height);
+                });
+                
+                // Draw shooter
+                ctx.drawImage(shooterImage, shooterX - 30, canvas.height - 70, 60, 60);
+                
+                // Draw explosions
+                drawExplosions();
+            }
+            
+            function gameLoop(currentTime) {
+                if (!gameActive) return;
+                
+                // Calculate time delta
+                const deltaTime = currentTime - lastTime;
+                lastTime = currentTime;
+                
+                // Update entities
+                updateEntities(deltaTime);
+                
+                // Render everything
+                render();
+                
+                // Continue loop
+                requestAnimationFrame(gameLoop);
+            }
+            
+            // Initialize game
+            init();
+        });
+    </script>
+</body>
+</html>

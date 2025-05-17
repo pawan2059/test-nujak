@@ -1,0 +1,2466 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$NUJAK</title>
+    <meta name="description" content="$NUJAK" />
+    <style type="text/css">
+      :root,
+      :host {
+        --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+        --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+        --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+        --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+        --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+        --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";
+        --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";
+        --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";
+        --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+        --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+        --fa-font-sharp-duotone-solid: normal 900 1em/1
+          "Font Awesome 6 Sharp Duotone";
+        --fa-font-sharp-duotone-regular: normal 400 1em/1
+          "Font Awesome 6 Sharp Duotone";
+        --fa-font-sharp-duotone-light: normal 300 1em/1
+          "Font Awesome 6 Sharp Duotone";
+        --fa-font-sharp-duotone-thin: normal 100 1em/1
+          "Font Awesome 6 Sharp Duotone";
+      }
+
+      svg:not(:root).svg-inline--fa,
+      svg:not(:host).svg-inline--fa {
+        overflow: visible;
+        box-sizing: content-box;
+      }
+
+      .svg-inline--fa {
+        display: var(--fa-display, inline-block);
+        height: 1em;
+        overflow: visible;
+        vertical-align: -0.125em;
+      }
+
+      .svg-inline--fa.fa-2xs {
+        vertical-align: 0.1em;
+      }
+
+      .svg-inline--fa.fa-xs {
+        vertical-align: 0em;
+      }
+
+      .svg-inline--fa.fa-sm {
+        vertical-align: -0.0714285705em;
+      }
+
+      .svg-inline--fa.fa-lg {
+        vertical-align: -0.2em;
+      }
+
+      .svg-inline--fa.fa-xl {
+        vertical-align: -0.25em;
+      }
+
+      .svg-inline--fa.fa-2xl {
+        vertical-align: -0.3125em;
+      }
+
+      .svg-inline--fa.fa-pull-left {
+        margin-right: var(--fa-pull-margin, 0.3em);
+        width: auto;
+      }
+
+      .svg-inline--fa.fa-pull-right {
+        margin-left: var(--fa-pull-margin, 0.3em);
+        width: auto;
+      }
+
+      .svg-inline--fa.fa-li {
+        width: var(--fa-li-width, 2em);
+        top: 0.25em;
+      }
+
+      .svg-inline--fa.fa-fw {
+        width: var(--fa-fw-width, 1.25em);
+      }
+
+      .fa-layers svg.svg-inline--fa {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .fa-layers-counter,
+      .fa-layers-text {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+      }
+
+      .fa-layers {
+        display: inline-block;
+        height: 1em;
+        position: relative;
+        text-align: center;
+        vertical-align: -0.125em;
+        width: 1em;
+      }
+
+      .fa-layers svg.svg-inline--fa {
+        transform-origin: center center;
+      }
+
+      .fa-layers-text {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center center;
+      }
+
+      .fa-layers-counter {
+        background-color: var(--fa-counter-background-color, #ff253a);
+        border-radius: var(--fa-counter-border-radius, 1em);
+        box-sizing: border-box;
+        color: var(--fa-inverse, #fff);
+        line-height: var(--fa-counter-line-height, 1);
+        max-width: var(--fa-counter-max-width, 5em);
+        min-width: var(--fa-counter-min-width, 1.5em);
+        overflow: hidden;
+        padding: var(--fa-counter-padding, 0.25em 0.5em);
+        right: var(--fa-right, 0);
+        text-overflow: ellipsis;
+        top: var(--fa-top, 0);
+        transform: scale(var(--fa-counter-scale, 0.25));
+        transform-origin: top right;
+      }
+
+      .fa-layers-bottom-right {
+        bottom: var(--fa-bottom, 0);
+        right: var(--fa-right, 0);
+        top: auto;
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: bottom right;
+      }
+
+      .fa-layers-bottom-left {
+        bottom: var(--fa-bottom, 0);
+        left: var(--fa-left, 0);
+        right: auto;
+        top: auto;
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: bottom left;
+      }
+
+      .fa-layers-top-right {
+        top: var(--fa-top, 0);
+        right: var(--fa-right, 0);
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: top right;
+      }
+
+      .fa-layers-top-left {
+        left: var(--fa-left, 0);
+        right: auto;
+        top: var(--fa-top, 0);
+        transform: scale(var(--fa-layers-scale, 0.25));
+        transform-origin: top left;
+      }
+
+      .fa-1x {
+        font-size: 1em;
+      }
+
+      .fa-2x {
+        font-size: 2em;
+      }
+
+      .fa-3x {
+        font-size: 3em;
+      }
+
+      .fa-4x {
+        font-size: 4em;
+      }
+
+      .fa-5x {
+        font-size: 5em;
+      }
+
+      .fa-6x {
+        font-size: 6em;
+      }
+
+      .fa-7x {
+        font-size: 7em;
+      }
+
+      .fa-8x {
+        font-size: 8em;
+      }
+
+      .fa-9x {
+        font-size: 9em;
+      }
+
+      .fa-10x {
+        font-size: 10em;
+      }
+
+      .fa-2xs {
+        font-size: 0.625em;
+        line-height: 0.1em;
+        vertical-align: 0.225em;
+      }
+
+      .fa-xs {
+        font-size: 0.75em;
+        line-height: 0.0833333337em;
+        vertical-align: 0.125em;
+      }
+
+      .fa-sm {
+        font-size: 0.875em;
+        line-height: 0.0714285718em;
+        vertical-align: 0.0535714295em;
+      }
+
+      .fa-lg {
+        font-size: 1.25em;
+        line-height: 0.05em;
+        vertical-align: -0.075em;
+      }
+
+      .fa-xl {
+        font-size: 1.5em;
+        line-height: 0.0416666682em;
+        vertical-align: -0.125em;
+      }
+
+      .fa-2xl {
+        font-size: 2em;
+        line-height: 0.03125em;
+        vertical-align: -0.1875em;
+      }
+
+      .fa-fw {
+        text-align: center;
+        width: 1.25em;
+      }
+
+      .fa-ul {
+        list-style-type: none;
+        margin-left: var(--fa-li-margin, 2.5em);
+        padding-left: 0;
+      }
+
+      .fa-ul > li {
+        position: relative;
+      }
+
+      .fa-li {
+        left: calc(-1 * var(--fa-li-width, 2em));
+        position: absolute;
+        text-align: center;
+        width: var(--fa-li-width, 2em);
+        line-height: inherit;
+      }
+
+      .fa-border {
+        border-color: var(--fa-border-color, #eee);
+        border-radius: var(--fa-border-radius, 0.1em);
+        border-style: var(--fa-border-style, solid);
+        border-width: var(--fa-border-width, 0.08em);
+        padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+      }
+
+      .fa-pull-left {
+        float: left;
+        margin-right: var(--fa-pull-margin, 0.3em);
+      }
+
+      .fa-pull-right {
+        float: right;
+        margin-left: var(--fa-pull-margin, 0.3em);
+      }
+
+      .fa-beat {
+        animation-name: fa-beat;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(--fa-animation-timing, ease-in-out);
+      }
+
+      .fa-bounce {
+        animation-name: fa-bounce;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(
+          --fa-animation-timing,
+          cubic-bezier(0.28, 0.84, 0.42, 1)
+        );
+      }
+
+      .fa-fade {
+        animation-name: fa-fade;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(
+          --fa-animation-timing,
+          cubic-bezier(0.4, 0, 0.6, 1)
+        );
+      }
+
+      .fa-beat-fade {
+        animation-name: fa-beat-fade;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(
+          --fa-animation-timing,
+          cubic-bezier(0.4, 0, 0.6, 1)
+        );
+      }
+
+      .fa-flip {
+        animation-name: fa-flip;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(--fa-animation-timing, ease-in-out);
+      }
+
+      .fa-shake {
+        animation-name: fa-shake;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(--fa-animation-timing, linear);
+      }
+
+      .fa-spin {
+        animation-name: fa-spin;
+        animation-delay: var(--fa-animation-delay, 0s);
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 2s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(--fa-animation-timing, linear);
+      }
+
+      .fa-spin-reverse {
+        --fa-animation-direction: reverse;
+      }
+
+      .fa-pulse,
+      .fa-spin-pulse {
+        animation-name: fa-spin;
+        animation-direction: var(--fa-animation-direction, normal);
+        animation-duration: var(--fa-animation-duration, 1s);
+        animation-iteration-count: var(
+          --fa-animation-iteration-count,
+          infinite
+        );
+        animation-timing-function: var(--fa-animation-timing, steps(8));
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fa-beat,
+        .fa-bounce,
+        .fa-fade,
+        .fa-beat-fade,
+        .fa-flip,
+        .fa-pulse,
+        .fa-shake,
+        .fa-spin,
+        .fa-spin-pulse {
+          animation-delay: -1ms;
+          animation-duration: 1ms;
+          animation-iteration-count: 1;
+          transition-delay: 0s;
+          transition-duration: 0s;
+        }
+      }
+
+      @keyframes fa-beat {
+        0%,
+        90% {
+          transform: scale(1);
+        }
+
+        45% {
+          transform: scale(var(--fa-beat-scale, 1.25));
+        }
+      }
+
+      @keyframes fa-bounce {
+        0% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        10% {
+          transform: scale(
+              var(--fa-bounce-start-scale-x, 1.1),
+              var(--fa-bounce-start-scale-y, 0.9)
+            )
+            translateY(0);
+        }
+
+        30% {
+          transform: scale(
+              var(--fa-bounce-jump-scale-x, 0.9),
+              var(--fa-bounce-jump-scale-y, 1.1)
+            )
+            translateY(var(--fa-bounce-height, -0.5em));
+        }
+
+        50% {
+          transform: scale(
+              var(--fa-bounce-land-scale-x, 1.05),
+              var(--fa-bounce-land-scale-y, 0.95)
+            )
+            translateY(0);
+        }
+
+        57% {
+          transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+        }
+
+        64% {
+          transform: scale(1, 1) translateY(0);
+        }
+
+        100% {
+          transform: scale(1, 1) translateY(0);
+        }
+      }
+
+      @keyframes fa-fade {
+        50% {
+          opacity: var(--fa-fade-opacity, 0.4);
+        }
+      }
+
+      @keyframes fa-beat-fade {
+        0%,
+        100% {
+          opacity: var(--fa-beat-fade-opacity, 0.4);
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(var(--fa-beat-fade-scale, 1.125));
+        }
+      }
+
+      @keyframes fa-flip {
+        50% {
+          transform: rotate3d(
+            var(--fa-flip-x, 0),
+            var(--fa-flip-y, 1),
+            var(--fa-flip-z, 0),
+            var(--fa-flip-angle, -180deg)
+          );
+        }
+      }
+
+      @keyframes fa-shake {
+        0% {
+          transform: rotate(-15deg);
+        }
+
+        4% {
+          transform: rotate(15deg);
+        }
+
+        8%,
+        24% {
+          transform: rotate(-18deg);
+        }
+
+        12%,
+        28% {
+          transform: rotate(18deg);
+        }
+
+        16% {
+          transform: rotate(-22deg);
+        }
+
+        20% {
+          transform: rotate(22deg);
+        }
+
+        32% {
+          transform: rotate(-12deg);
+        }
+
+        36% {
+          transform: rotate(12deg);
+        }
+
+        40%,
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      @keyframes fa-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .fa-rotate-90 {
+        transform: rotate(90deg);
+      }
+
+      .fa-rotate-180 {
+        transform: rotate(180deg);
+      }
+
+      .fa-rotate-270 {
+        transform: rotate(270deg);
+      }
+
+      .fa-flip-horizontal {
+        transform: scale(-1, 1);
+      }
+
+      .fa-flip-vertical {
+        transform: scale(1, -1);
+      }
+
+      .fa-flip-both,
+      .fa-flip-horizontal.fa-flip-vertical {
+        transform: scale(-1, -1);
+      }
+
+      .fa-rotate-by {
+        transform: rotate(var(--fa-rotate-angle, 0));
+      }
+
+      .fa-stack {
+        display: inline-block;
+        vertical-align: middle;
+        height: 2em;
+        position: relative;
+        width: 2.5em;
+      }
+
+      .fa-stack-1x,
+      .fa-stack-2x {
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: var(--fa-stack-z-index, auto);
+      }
+
+      .svg-inline--fa.fa-stack-1x {
+        height: 1em;
+        width: 1.25em;
+      }
+
+      .svg-inline--fa.fa-stack-2x {
+        height: 2em;
+        width: 2.5em;
+      }
+
+      .fa-inverse {
+        color: var(--fa-inverse, #fff);
+      }
+
+      .sr-only,
+      .fa-sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .sr-only-focusable:not(:focus),
+      .fa-sr-only-focusable:not(:focus) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      .svg-inline--fa .fa-primary {
+        fill: var(--fa-primary-color, currentColor);
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa .fa-secondary {
+        fill: var(--fa-secondary-color, currentColor);
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-primary {
+        opacity: var(--fa-secondary-opacity, 0.4);
+      }
+
+      .svg-inline--fa.fa-swap-opacity .fa-secondary {
+        opacity: var(--fa-primary-opacity, 1);
+      }
+
+      .svg-inline--fa mask .fa-primary,
+      .svg-inline--fa mask .fa-secondary {
+        fill: black;
+      }
+    </style>
+    <link rel="icon" href="/logo.png" />
+    <link
+      rel="preload"
+      href="/assets/fonts/Shaka Pow Upright.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <script
+      type="module"
+      crossorigin=""
+      src="/assets/index-DI8dKlH7.js"
+    ></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-ZsRiW8yu.css" />
+    <link href="https://fonts.cdnfonts.com/css/gooddog" rel="stylesheet" />
+    <style type="text/css">
+      [data-sonner-toaster][dir="ltr"],
+      html[dir="ltr"] {
+        --toast-icon-margin-start: -3px;
+        --toast-icon-margin-end: 4px;
+        --toast-svg-margin-start: -1px;
+        --toast-svg-margin-end: 0px;
+        --toast-button-margin-start: auto;
+        --toast-button-margin-end: 0;
+        --toast-close-button-start: 0;
+        --toast-close-button-end: unset;
+        --toast-close-button-transform: translate(-35%, -35%);
+      }
+
+      [data-sonner-toaster][dir="rtl"],
+      html[dir="rtl"] {
+        --toast-icon-margin-start: 4px;
+        --toast-icon-margin-end: -3px;
+        --toast-svg-margin-start: 0px;
+        --toast-svg-margin-end: -1px;
+        --toast-button-margin-start: 0;
+        --toast-button-margin-end: auto;
+        --toast-close-button-start: unset;
+        --toast-close-button-end: 0;
+        --toast-close-button-transform: translate(35%, -35%);
+      }
+
+      [data-sonner-toaster] {
+        position: fixed;
+        width: var(--width);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+        --gray1: hsl(0, 0%, 99%);
+        --gray2: hsl(0, 0%, 97.3%);
+        --gray3: hsl(0, 0%, 95.1%);
+        --gray4: hsl(0, 0%, 93%);
+        --gray5: hsl(0, 0%, 90.9%);
+        --gray6: hsl(0, 0%, 88.7%);
+        --gray7: hsl(0, 0%, 85.8%);
+        --gray8: hsl(0, 0%, 78%);
+        --gray9: hsl(0, 0%, 56.1%);
+        --gray10: hsl(0, 0%, 52.3%);
+        --gray11: hsl(0, 0%, 43.5%);
+        --gray12: hsl(0, 0%, 9%);
+        --border-radius: 8px;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        outline: 0;
+        z-index: 999999999;
+        transition: transform 0.4s ease;
+      }
+
+      [data-sonner-toaster][data-lifted="true"] {
+        transform: translateY(-8px);
+      }
+
+      @media (hover: none) and (pointer: coarse) {
+        [data-sonner-toaster][data-lifted="true"] {
+          transform: none;
+        }
+      }
+
+      [data-sonner-toaster][data-x-position="right"] {
+        right: var(--offset-right);
+      }
+
+      [data-sonner-toaster][data-x-position="left"] {
+        left: var(--offset-left);
+      }
+
+      [data-sonner-toaster][data-x-position="center"] {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      [data-sonner-toaster][data-y-position="top"] {
+        top: var(--offset-top);
+      }
+
+      [data-sonner-toaster][data-y-position="bottom"] {
+        bottom: var(--offset-bottom);
+      }
+
+      [data-sonner-toast] {
+        --y: translateY(100%);
+        --lift-amount: calc(var(--lift) * var(--gap));
+        z-index: var(--z-index);
+        position: absolute;
+        opacity: 0;
+        transform: var(--y);
+        touch-action: none;
+        transition: transform 0.4s, opacity 0.4s, height 0.4s, box-shadow 0.2s;
+        box-sizing: border-box;
+        outline: 0;
+        overflow-wrap: anywhere;
+      }
+
+      [data-sonner-toast][data-styled="true"] {
+        padding: 16px;
+        background: var(--normal-bg);
+        border: 1px solid var(--normal-border);
+        color: var(--normal-text);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: var(--width);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      [data-sonner-toast]:focus-visible {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(0, 0, 0, 0.2);
+      }
+
+      [data-sonner-toast][data-y-position="top"] {
+        top: 0;
+        --y: translateY(-100%);
+        --lift: 1;
+        --lift-amount: calc(1 * var(--gap));
+      }
+
+      [data-sonner-toast][data-y-position="bottom"] {
+        bottom: 0;
+        --y: translateY(100%);
+        --lift: -1;
+        --lift-amount: calc(var(--lift) * var(--gap));
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-description] {
+        font-weight: 400;
+        line-height: 1.4;
+        color: #3f3f3f;
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-styled="true"]
+        [data-description] {
+        color: inherit;
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"] [data-description] {
+        color: #e8e8e8;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-title] {
+        font-weight: 500;
+        line-height: 1.5;
+        color: inherit;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-icon] {
+        display: flex;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        flex-shrink: 0;
+        margin-left: var(--toast-icon-margin-start);
+        margin-right: var(--toast-icon-margin-end);
+      }
+
+      [data-sonner-toast][data-promise="true"] [data-icon] > svg {
+        opacity: 0;
+        transform: scale(0.8);
+        transform-origin: center;
+        animation: sonner-fade-in 0.3s ease forwards;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-icon] > * {
+        flex-shrink: 0;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-icon] svg {
+        margin-left: var(--toast-svg-margin-start);
+        margin-right: var(--toast-svg-margin-end);
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-content] {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-button] {
+        border-radius: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        height: 24px;
+        font-size: 12px;
+        color: var(--normal-bg);
+        background: var(--normal-text);
+        margin-left: var(--toast-button-margin-start);
+        margin-right: var(--toast-button-margin-end);
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        outline: 0;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        transition: opacity 0.4s, box-shadow 0.2s;
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-button]:focus-visible {
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-button]:first-of-type {
+        margin-left: var(--toast-button-margin-start);
+        margin-right: var(--toast-button-margin-end);
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-cancel] {
+        color: var(--normal-text);
+        background: rgba(0, 0, 0, 0.08);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"]
+        [data-sonner-toast][data-styled="true"]
+        [data-cancel] {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-close-button] {
+        position: absolute;
+        left: var(--toast-close-button-start);
+        right: var(--toast-close-button-end);
+        top: 0;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        color: var(--gray12);
+        background: var(--normal-bg);
+        border: 1px solid var(--gray4);
+        transform: var(--toast-close-button-transform);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1;
+        transition: opacity 0.1s, background 0.2s, border-color 0.2s;
+      }
+
+      [data-sonner-toast][data-styled="true"]
+        [data-close-button]:focus-visible {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(0, 0, 0, 0.2);
+      }
+
+      [data-sonner-toast][data-styled="true"] [data-disabled="true"] {
+        cursor: not-allowed;
+      }
+
+      [data-sonner-toast][data-styled="true"]:hover [data-close-button]:hover {
+        background: var(--gray2);
+        border-color: var(--gray5);
+      }
+
+      [data-sonner-toast][data-swiping="true"]::before {
+        content: "";
+        position: absolute;
+        left: -100%;
+        right: -100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      [data-sonner-toast][data-y-position="top"][data-swiping="true"]::before {
+        bottom: 50%;
+        transform: scaleY(3) translateY(50%);
+      }
+
+      [data-sonner-toast][data-y-position="bottom"][data-swiping="true"]::before {
+        top: 50%;
+        transform: scaleY(3) translateY(-50%);
+      }
+
+      [data-sonner-toast][data-swiping="false"][data-removed="true"]::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: scaleY(2);
+      }
+
+      [data-sonner-toast][data-expanded="true"]::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: calc(var(--gap) + 1px);
+        bottom: 100%;
+        width: 100%;
+      }
+
+      [data-sonner-toast][data-mounted="true"] {
+        --y: translateY(0);
+        opacity: 1;
+      }
+
+      [data-sonner-toast][data-expanded="false"][data-front="false"] {
+        --scale: var(--toasts-before) * 0.05 + 1;
+        --y: translateY(calc(var(--lift-amount) * var(--toasts-before)))
+          scale(calc(-1 * var(--scale)));
+        height: var(--front-toast-height);
+      }
+
+      [data-sonner-toast] > * {
+        transition: opacity 0.4s;
+      }
+
+      [data-sonner-toast][data-x-position="right"] {
+        right: 0;
+      }
+
+      [data-sonner-toast][data-x-position="left"] {
+        left: 0;
+      }
+
+      [data-sonner-toast][data-expanded="false"][data-front="false"][data-styled="true"]
+        > * {
+        opacity: 0;
+      }
+
+      [data-sonner-toast][data-visible="false"] {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      [data-sonner-toast][data-mounted="true"][data-expanded="true"] {
+        --y: translateY(calc(var(--lift) * var(--offset)));
+        height: var(--initial-height);
+      }
+
+      [data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"] {
+        --y: translateY(calc(var(--lift) * -100%));
+        opacity: 0;
+      }
+
+      [data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"] {
+        --y: translateY(
+          calc(var(--lift) * var(--offset) + var(--lift) * -100%)
+        );
+        opacity: 0;
+      }
+
+      [data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"] {
+        --y: translateY(40%);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.2s;
+      }
+
+      [data-sonner-toast][data-removed="true"][data-front="false"]::before {
+        height: calc(var(--initial-height) + 20%);
+      }
+
+      [data-sonner-toast][data-swiping="true"] {
+        transform: var(--y) translateY(var(--swipe-amount-y, 0))
+          translateX(var(--swipe-amount-x, 0));
+        transition: none;
+      }
+
+      [data-sonner-toast][data-swiped="true"] {
+        user-select: none;
+      }
+
+      [data-sonner-toast][data-swipe-out="true"][data-y-position="bottom"],
+      [data-sonner-toast][data-swipe-out="true"][data-y-position="top"] {
+        animation-duration: 0.2s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="left"] {
+        animation-name: swipe-out-left;
+      }
+
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="right"] {
+        animation-name: swipe-out-right;
+      }
+
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="up"] {
+        animation-name: swipe-out-up;
+      }
+
+      [data-sonner-toast][data-swipe-out="true"][data-swipe-direction="down"] {
+        animation-name: swipe-out-down;
+      }
+
+      @keyframes swipe-out-left {
+        from {
+          transform: var(--y) translateX(var(--swipe-amount-x));
+          opacity: 1;
+        }
+
+        to {
+          transform: var(--y) translateX(calc(var(--swipe-amount-x) - 100%));
+          opacity: 0;
+        }
+      }
+
+      @keyframes swipe-out-right {
+        from {
+          transform: var(--y) translateX(var(--swipe-amount-x));
+          opacity: 1;
+        }
+
+        to {
+          transform: var(--y) translateX(calc(var(--swipe-amount-x) + 100%));
+          opacity: 0;
+        }
+      }
+
+      @keyframes swipe-out-up {
+        from {
+          transform: var(--y) translateY(var(--swipe-amount-y));
+          opacity: 1;
+        }
+
+        to {
+          transform: var(--y) translateY(calc(var(--swipe-amount-y) - 100%));
+          opacity: 0;
+        }
+      }
+
+      @keyframes swipe-out-down {
+        from {
+          transform: var(--y) translateY(var(--swipe-amount-y));
+          opacity: 1;
+        }
+
+        to {
+          transform: var(--y) translateY(calc(var(--swipe-amount-y) + 100%));
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        [data-sonner-toaster] {
+          position: fixed;
+          right: var(--mobile-offset-right);
+          left: var(--mobile-offset-left);
+          width: 100%;
+        }
+
+        [data-sonner-toaster][dir="rtl"] {
+          left: calc(var(--mobile-offset-left) * -1);
+        }
+
+        [data-sonner-toaster] [data-sonner-toast] {
+          left: 0;
+          right: 0;
+          width: calc(100% - var(--mobile-offset-left) * 2);
+        }
+
+        [data-sonner-toaster][data-x-position="left"] {
+          left: var(--mobile-offset-left);
+        }
+
+        [data-sonner-toaster][data-y-position="bottom"] {
+          bottom: var(--mobile-offset-bottom);
+        }
+
+        [data-sonner-toaster][data-y-position="top"] {
+          top: var(--mobile-offset-top);
+        }
+
+        [data-sonner-toaster][data-x-position="center"] {
+          left: var(--mobile-offset-left);
+          right: var(--mobile-offset-right);
+          transform: none;
+        }
+      }
+
+      [data-sonner-toaster][data-sonner-theme="light"] {
+        --normal-bg: #fff;
+        --normal-border: var(--gray4);
+        --normal-text: var(--gray12);
+        --success-bg: hsl(143, 85%, 96%);
+        --success-border: hsl(145, 92%, 87%);
+        --success-text: hsl(140, 100%, 27%);
+        --info-bg: hsl(208, 100%, 97%);
+        --info-border: hsl(221, 91%, 93%);
+        --info-text: hsl(210, 92%, 45%);
+        --warning-bg: hsl(49, 100%, 97%);
+        --warning-border: hsl(49, 91%, 84%);
+        --warning-text: hsl(31, 92%, 45%);
+        --error-bg: hsl(359, 100%, 97%);
+        --error-border: hsl(359, 100%, 94%);
+        --error-text: hsl(360, 100%, 45%);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="light"]
+        [data-sonner-toast][data-invert="true"] {
+        --normal-bg: #000;
+        --normal-border: hsl(0, 0%, 20%);
+        --normal-text: var(--gray1);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"]
+        [data-sonner-toast][data-invert="true"] {
+        --normal-bg: #fff;
+        --normal-border: var(--gray3);
+        --normal-text: var(--gray12);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"] {
+        --normal-bg: #000;
+        --normal-bg-hover: hsl(0, 0%, 12%);
+        --normal-border: hsl(0, 0%, 20%);
+        --normal-border-hover: hsl(0, 0%, 25%);
+        --normal-text: var(--gray1);
+        --success-bg: hsl(150, 100%, 6%);
+        --success-border: hsl(147, 100%, 12%);
+        --success-text: hsl(150, 86%, 65%);
+        --info-bg: hsl(215, 100%, 6%);
+        --info-border: hsl(223, 43%, 17%);
+        --info-text: hsl(216, 87%, 65%);
+        --warning-bg: hsl(64, 100%, 6%);
+        --warning-border: hsl(60, 100%, 9%);
+        --warning-text: hsl(46, 87%, 65%);
+        --error-bg: hsl(358, 76%, 10%);
+        --error-border: hsl(357, 89%, 16%);
+        --error-text: hsl(358, 100%, 81%);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"]
+        [data-sonner-toast]
+        [data-close-button] {
+        background: var(--normal-bg);
+        border-color: var(--normal-border);
+        color: var(--normal-text);
+      }
+
+      [data-sonner-toaster][data-sonner-theme="dark"]
+        [data-sonner-toast]
+        [data-close-button]:hover {
+        background: var(--normal-bg-hover);
+        border-color: var(--normal-border-hover);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="success"] {
+        background: var(--success-bg);
+        border-color: var(--success-border);
+        color: var(--success-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="success"]
+        [data-close-button] {
+        background: var(--success-bg);
+        border-color: var(--success-border);
+        color: var(--success-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="info"] {
+        background: var(--info-bg);
+        border-color: var(--info-border);
+        color: var(--info-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="info"]
+        [data-close-button] {
+        background: var(--info-bg);
+        border-color: var(--info-border);
+        color: var(--info-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="warning"] {
+        background: var(--warning-bg);
+        border-color: var(--warning-border);
+        color: var(--warning-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="warning"]
+        [data-close-button] {
+        background: var(--warning-bg);
+        border-color: var(--warning-border);
+        color: var(--warning-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="error"] {
+        background: var(--error-bg);
+        border-color: var(--error-border);
+        color: var(--error-text);
+      }
+
+      [data-rich-colors="true"][data-sonner-toast][data-type="error"]
+        [data-close-button] {
+        background: var(--error-bg);
+        border-color: var(--error-border);
+        color: var(--error-text);
+      }
+
+      .sonner-loading-wrapper {
+        --size: 16px;
+        height: var(--size);
+        width: var(--size);
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+      }
+
+      .sonner-loading-wrapper[data-visible="false"] {
+        transform-origin: center;
+        animation: sonner-fade-out 0.2s ease forwards;
+      }
+
+      .sonner-spinner {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        height: var(--size);
+        width: var(--size);
+      }
+
+      .sonner-loading-bar {
+        animation: sonner-spin 1.2s linear infinite;
+        background: var(--gray11);
+        border-radius: 6px;
+        height: 8%;
+        left: -10%;
+        position: absolute;
+        top: -3.9%;
+        width: 24%;
+      }
+
+      .sonner-loading-bar:first-child {
+        animation-delay: -1.2s;
+        transform: rotate(0.0001deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(2) {
+        animation-delay: -1.1s;
+        transform: rotate(30deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(3) {
+        animation-delay: -1s;
+        transform: rotate(60deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(4) {
+        animation-delay: -0.9s;
+        transform: rotate(90deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(5) {
+        animation-delay: -0.8s;
+        transform: rotate(120deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(6) {
+        animation-delay: -0.7s;
+        transform: rotate(150deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(7) {
+        animation-delay: -0.6s;
+        transform: rotate(180deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(8) {
+        animation-delay: -0.5s;
+        transform: rotate(210deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(9) {
+        animation-delay: -0.4s;
+        transform: rotate(240deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(10) {
+        animation-delay: -0.3s;
+        transform: rotate(270deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(11) {
+        animation-delay: -0.2s;
+        transform: rotate(300deg) translate(146%);
+      }
+
+      .sonner-loading-bar:nth-child(12) {
+        animation-delay: -0.1s;
+        transform: rotate(330deg) translate(146%);
+      }
+
+      @keyframes sonner-fade-in {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes sonner-fade-out {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        100% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+      }
+
+      @keyframes sonner-spin {
+        0% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.15;
+        }
+      }
+
+      @media (prefers-reduced-motion) {
+        .sonner-loading-bar,
+        [data-sonner-toast],
+        [data-sonner-toast] > * {
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+
+      .sonner-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        transition: opacity 0.2s, transform 0.2s;
+      }
+
+      .sonner-loader[data-visible="false"] {
+        opacity: 0;
+        transform: scale(0.8) translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <style>
+    body,
+    div,
+    span,
+    a,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    footer,
+    main,
+    section,
+    article,
+    aside,
+    nav,
+    ul,
+    li,
+    ol {
+      font-family: "GoodDog", sans-serif !important;
+    }
+  </style>
+  <body>
+    <div>
+      <div class="min-h-screen flex flex-col">
+        <header
+          class="sticky top-0 z-50 bg-green-700/80 backdrop-blur-sm border-b border-green-800"
+        >
+          <nav
+            class="container mx-auto px-4 py-3 flex justify-between items-center"
+          >
+            <a href="#" class="flex items-center"
+              ><img
+                alt="Wojak Logo"
+                class="w-12 h-12 rounded-full"
+                src="/logo.png"
+            /></a>
+            <div class="hidden md:flex items-center gap-4">
+              <a href="#about" class="text-white hover:text-green-200">About</a
+              ><a href="#gallery" class="text-white hover:text-green-200"
+                >Gallery</a
+              ><a href="#tokenomics" class="text-white hover:text-green-200"
+                >Tokenomics</a
+              ><a
+                href="https://swap.reservoir.tools/#/swap?chain=abstract&amp;outputCurrency=0xeA8aDaA7bf36edB58Dd5EA0808306957db95336e"
+                class="btn bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+                >Get NUJAK</a
+              >
+<a
+  href="game.html"
+  class="btn bg-yellow-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700"
+>
+  Play Game
+</a>
+            </div>
+          </nav>
+        </header>
+        <main class="flex-1">
+          <section class="relative">
+            <div
+              style="
+                position: absolute;
+                z-index: 999;
+                margin: auto;
+                height: 100%;
+              "
+            >
+              <img
+                style="width: 50%; height: auto; margin-top: 20%"
+                src="/text.png"
+                alt=""
+              />
+            </div>
+            <div class="relative w-full flex-shrink-0">
+              <img
+                alt="Hero Image"
+                class="w-full object-cover rounded-lg"
+                src="/bg.png"
+              />
+            </div>
+          </section>
+          <section class="bg-green-800 py-6 w-full">
+            <div class="container mx-auto px-4">
+              <div class="grid grid-cols-3 gap-4 justify-center items-center">
+                <a
+                  href="https://t.me/nujak_abs"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-3"
+                  ><svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fab"
+                    data-icon="telegram"
+                    class="svg-inline--fa fa-telegram fa-2x"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 496 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"
+                    ></path></svg
+                  ><span
+                    class="ml-2 hidden sm:inline ml-2 text-xs sm:text-sm md:text-base lg:text-lg"
+                    >Telegram</span
+                  ></a
+                ><a
+                  href="https://x.com/nujak_abs"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-3"
+                  ><svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fab"
+                    data-icon="twitter"
+                    class="svg-inline--fa fa-twitter fa-2x"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    ></path></svg
+                  ><span
+                    class="ml-2 hidden sm:inline ml-2 text-xs sm:text-sm md:text-base lg:text-lg"
+                    >Twitter</span
+                  ></a
+                ><a
+                  href="https://dexscreener.com/abstract/0x54b86A4f66c2819E8C2C31C179170077D861d4AB"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 lg:px-10 lg:py-3"
+                  ><img
+                    alt="Dex Logo"
+                    class="w-8 h-8"
+                    src="/assets/dexlogo-o7pzGa-8.png"
+                    style="border-radius: 50%"
+                  /><span
+                    class="ml-2 hidden sm:inline ml-2 text-xs sm:text-sm md:text-base lg:text-lg"
+                    >Dexscreener</span
+                  ></a
+                >
+              </div>
+            </div>
+          </section>
+          <div class="bg-green-100 py-4 overflow-hidden">
+            <div class="scroll-ticker flex whitespace-nowrap">
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+              <div class="flex items-center mx-4">
+                <img
+                  alt="Wojak Logo"
+                  class="w-10 h-10 rounded-full mr-2"
+                  src="/logo.png"
+                /><span class="font-bold text-green-700">NUJAK</span>
+              </div>
+            </div>
+          </div>
+          <section id="about" class="py-16 bg-green-500/20">
+            <div
+              class="container mx-auto px-4 bg-green-100/50 p-8 rounded-lg shadow-lg"
+            >
+              <h2 class="text-5xl font-bold text-center text-green-700 mb-8">
+                Nujak the new Wojak
+              </h2>
+              <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <p class="text-green-800 text-lg leading-relaxed text-align">
+                    Origin: A newer offshoot meme, often appearing around
+                    2021–2023, particularly on /biz/ and niche Twitter
+                    communities.
+                    <br />
+                    Appearance:
+                    <br />
+                    Hyper-detailed, plastic-like 3D rendering of Wojak's face
+                    <br />
+                    Shiny, often uncanny or grotesque — like a synthetic or
+                    AI-generated version of Wojak
+                    <br />
+                    Name Meaning: “Nujak” = "New Wojak"
+                    <br /><br /><br />
+                    Meaning/Symbolism:
+                    <br /><br />
+                    Represents modern, desensitized internet users
+                    <br />Critique of how digital personas have become
+                    overproduced and hollow
+                    <br />
+                    Often seen as ironic, hyper-commercialized, or mocking the
+                    original spirit of Wojak
+                    <br />
+                    Sometimes used to reflect NFT/crypto degens, soulless
+                    engagement farming, or clout-chasing behavior
+                  </p>
+                </div>
+                <div><img src="about.jpg" alt="" /></div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="gallery"
+            class="relative h-auto overflow-hidden bg-transparent"
+          >
+            <h2 class="text-5xl font-bold text-center text-green-700 mt-6 mb-3">
+              Gallery
+            </h2>
+            <div class="flex flex-col gap-6 py-6">
+              <div class="scroll-row whitespace-nowrap">
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/1.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/2.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/3.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/4.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/18.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/6.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/7.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/8.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/9.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/10.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/34.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/12.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/13.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/14.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/15.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/24.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/17.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/18.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/19.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/20.jpg"
+                  />
+                </div>
+              </div>
+              <div class="scroll-row-reverse whitespace-nowrap">
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/21.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/22.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/23.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/24.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/25.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/26.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/27.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/28.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/29.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/30.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/1.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/32.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/33.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/34.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/35.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/36.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/32.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/38.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/39.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/4.jpg"
+                  />
+                </div>
+              </div>
+              <div class="scroll-row whitespace-nowrap">
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/41.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/42.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/43.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/44.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/45.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/46.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/47.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/48.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/49.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/50.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/51.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/52.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/5.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/54.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/55.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/7.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/57.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/58.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/59.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/60.jpg"
+                  />
+                </div>
+                <div class="w-64 h-48 flex-shrink-0">
+                  <img
+                    alt="Test Image"
+                    class="w-full h-full object-cover rounded-lg"
+                    src="/assets/61.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            id="how-to-buy"
+            class="relative py-16 bg-[#15803D]"
+            style="display: none !important"
+          >
+            <div class="container mx-auto px-4">
+              <div class="flex justify-center mb-6">
+                <img
+                  alt="How to Buy"
+                  class="w-full max-w-md"
+                  src="/assets/howtobuy-Bc579lSl.png"
+                />
+              </div>
+              <div
+                class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center"
+              >
+                <img
+                  alt="Step 1"
+                  class="w-full max-w-xs h-auto object-cover rounded-lg shadow-md"
+                  src="/assets/step1-6eZIfS04.png"
+                /><img
+                  alt="Step 2"
+                  class="w-full max-w-xs h-auto object-cover rounded-lg shadow-md"
+                  src="/assets/step2-CQ-kAfq4.png"
+                /><img
+                  alt="Step 3"
+                  class="w-full max-w-xs h-auto object-cover rounded-lg shadow-md"
+                  src="/assets/step3-CJSUqL6_.png"
+                /><img
+                  alt="Step 4"
+                  class="w-full max-w-xs h-auto object-cover rounded-lg shadow-md"
+                  src="/assets/step4-CXRWYuyY.png"
+                />
+              </div>
+            </div>
+            <img
+              alt="Thumbs Up"
+              class="absolute left-0 bottom-0 w-32 sm:w-40 md:w-32 lg:w-40 h-auto"
+              src="/assets/thumbsup-CnexYQ28.png"
+            />
+          </section>
+          <section id="tokenomics" class="py-16 bg-green-50">
+            <div class="container mx-auto px-4">
+              <h2 class="text-4xl font-bold text-center text-green-700 mb-8">
+                Tokenomics
+              </h2>
+              <div class="grid grid-cols-2 gap-4">
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">Ticker</h4>
+                  <p class="text-green-600">$NUJAK</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">
+                    Contract
+                  </h4>
+                  <p class="text-green-600">Safu</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">Taxes</h4>
+                  <p class="text-green-600">No Taxes</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">Network</h4>
+                  <p class="text-green-600">Abstract</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">
+                    Ownership
+                  </h4>
+                  <p class="text-green-600">Renounced</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">
+                    Total Supply
+                  </h4>
+                  <p class="text-green-600">1 Billion</p>
+                </div>
+                <div
+                  class="tokenomics-box bg-white p-6 rounded-lg shadow-lg text-center col-span-2"
+                >
+                  <h4 class="text-xl font-bold mb-2 text-green-700">CA</h4>
+                  <p class="text-green-600">
+                    0x54b86A4f66c2819E8C2C31C179170077D861d4AB
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer class="bg-green-700 text-white py-8">
+          <div
+            class="flex grid-cols-5 items-center justify-center space-x-6 mb-6"
+          >
+            <a href="#about" class="text-white hover:text-green-300">About</a
+            ><a href="#gallery" class="text-white hover:text-green-300"
+              >Gallery</a
+            ><a href="#tokenomics" class="text-white hover:text-green-300"
+              >Tokenomics</a
+            ><a
+              href="https://swap.reservoir.tools/#/swap?chain=abstract&amp;outputCurrency=0xeA8aDaA7bf36edB58Dd5EA0808306957db95336e"
+              class="border-2 border-white text-white px-6 py-2 rounded-lg hover:bg-white hover:text-green-700"
+              >Get NUJAK</a
+            >
+          </div>
+          <div class="mt-6 flex items-center justify-center text-green-300">
+            © 2025 NUJAK
+          </div>
+        </footer>
+        <section
+          aria-label="Notifications alt+T"
+          tabindex="-1"
+          aria-live="polite"
+          aria-relevant="additions text"
+          aria-atomic="false"
+        ></section>
+      </div>
+    </div>
+  </body>
+</html>
